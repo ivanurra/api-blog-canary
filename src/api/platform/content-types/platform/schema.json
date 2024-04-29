@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platforms",
+  "info": {
+    "singularName": "platform",
+    "pluralName": "platforms",
+    "displayName": "Platform"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true,
+      "maxLength": 50,
+      "minLength": 1
+    },
+    "supported": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "company": {
+      "type": "enumeration",
+      "enum": [
+        "Sony",
+        "Nintendo",
+        "Microsoft",
+        "SNK"
+      ]
+    },
+    "launch": {
+      "type": "date"
+    },
+    "video_games": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video-game.video-game",
+      "mappedBy": "platforms"
+    }
+  }
+}
