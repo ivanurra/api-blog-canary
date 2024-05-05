@@ -21,9 +21,6 @@
     "launch": {
       "type": "date"
     },
-    "description": {
-      "type": "blocks"
-    },
     "cover": {
       "type": "media",
       "multiple": false,
@@ -41,6 +38,14 @@
       "relation": "manyToMany",
       "target": "api::platform.platform",
       "inversedBy": "video_games"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "largeText": {
+      "type": "text",
+      "required": true
     }
   }
 }

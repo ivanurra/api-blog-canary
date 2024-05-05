@@ -852,7 +852,6 @@ export interface ApiVideoGameVideoGame extends Schema.CollectionType {
         maxLength: 150;
       }>;
     launch: Attribute.Date;
-    description: Attribute.Blocks;
     cover: Attribute.Media;
     slug: Attribute.UID<'api::video-game.video-game', 'title'>;
     platforms: Attribute.Relation<
@@ -860,6 +859,8 @@ export interface ApiVideoGameVideoGame extends Schema.CollectionType {
       'manyToMany',
       'api::platform.platform'
     >;
+    description: Attribute.RichText & Attribute.Required;
+    largeText: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
